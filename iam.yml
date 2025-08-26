@@ -16,7 +16,7 @@ Resources:
             Action: sts:AssumeRole
       Path: /
       Policies:
-        - PolicyName: 11.30am-policy
+        - PolicyName: Devops-Policy-demo
           PolicyDocument:
             Version: '2012-10-17'
             Statement:
@@ -26,4 +26,5 @@ Resources:
                   - s3:GetObject
                   - ec2:Describe*
                   - s3:PutObject
+                  - s3:*
                 Resource: "*"
