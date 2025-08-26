@@ -26,5 +26,5 @@ Resources:
         - !Ref MySecurityGroup
       Tags:
         - Key: Name
-          Value: 11.30am-sys
+          Value: new-linux-server
 
