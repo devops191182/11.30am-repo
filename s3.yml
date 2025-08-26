@@ -1,8 +1,0 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Resources:
-  MyS3Bucket:
-    Type: 'AWS::S3::Bucket'
-    Properties:
-      BucketName: bucket-templet-demo-10 # Replace with your unique bucket name
-      VersioningConfiguration:
-        Status: Enabled

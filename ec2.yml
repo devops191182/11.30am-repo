@@ -1,4 +1,26 @@
-name: creating
-hosts: localhost
-task: old
-service: aaaa,
+AWSTemplateFormatVersion: "2010-09-09"
+Description: creating ec2
+
+Resources:
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: ssh access
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0  # ⚠️ Open to the world — change this in production
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      KeyName: can-ais-home
+      ImageId: ami-0ca3fe9992272540b  # Amazon Linux 2 (replace with your region’s AMI)
+      SecurityGroupIds:
+        - !Ref MySecurityGroup
+      Tags:
+        - Key: Name
+          Value: 11.30am-sys
+
